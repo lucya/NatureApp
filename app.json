@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "NatureApp",
-    "slug": "nature-app",
+    "slug": "tarot-expo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
