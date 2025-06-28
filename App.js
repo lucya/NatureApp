@@ -17,7 +17,11 @@ export default function App() {
       label: "나의 운명",
       url: "https://tarofortune.pages.dev",
     },
-    { key: "lunch", label: "Lunch Hunt", url: "https://lunchhunter.pages.dev" },
+    {
+      key: "lunch",
+      label: "Lunch Hunt",
+      url: "https://lunchhunt.pages.dev/",
+    },
   ];
 
   return (
