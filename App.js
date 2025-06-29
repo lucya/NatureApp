@@ -99,6 +99,15 @@ export default function App() {
     return baseUrl;
   };
 
+  // hunger-game tab URL에 위치 파라미터 추가
+  const getHungerGameUrl = () => {
+    const baseUrl = "https://hunger-game.pages.dev/";
+    if (location && locationPermission) {
+      return `${baseUrl}?lat=${location.latitude}&lng=${location.longitude}`;
+    }
+    return baseUrl;
+  };
+
   const tabs = [
     {
       key: "fortune",
@@ -118,7 +127,7 @@ export default function App() {
       key: "hunger-game",
       label: "오늘 뭐 먹지?",
       description: "토너먼트로 음식을 결정해보세요",
-      url: "https://hunger-game.pages.dev/",
+      url: getHungerGameUrl(),
       emoji: "🍽️",
     },
     {
