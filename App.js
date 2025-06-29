@@ -121,6 +121,13 @@ export default function App() {
       url: "https://hunger-game.pages.dev/",
       emoji: "🍽️",
     },
+    {
+      key: "capital-quiz",
+      label: "세계 수도 맞추기",
+      description: "세계 각국의 수도를 맞춰보세요",
+      url: "https://claude.ai/public/artifacts/5a5135a1-d8bd-42b3-87ab-451e12467122",
+      emoji: "🌍",
+    },
   ];
 
   // 탭 레이아웃 계산 (한 줄에 최대 2개, 긴 텍스트는 한 줄에)
