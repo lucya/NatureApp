@@ -8,6 +8,7 @@ import {
   Alert,
   ScrollView,
   Dimensions,
+  BackHandler,
 } from "react-native";
 import { WebView } from "react-native-webview";
 import * as Location from "expo-location";
@@ -23,6 +24,37 @@ export default function App() {
   useEffect(() => {
     requestLocationPermission();
   }, []);
+
+  // 하드웨어 뒤로가기 버튼 처리
+  useEffect(() => {
+    const backAction = () => {
+      if (currentScreen !== "home") {
+        setCurrentScreen("home");
+        return true; // 이벤트를 처리했음을 알림
+      } else {
+        // 홈 화면에서 뒤로가기를 누르면 앱 종료 확인
+        Alert.alert("앱 종료", "앱을 종료하시겠습니까?", [
+          {
+            text: "취소",
+            onPress: () => null,
+            style: "cancel",
+          },
+          {
+            text: "종료",
+            onPress: () => BackHandler.exitApp(),
+          },
+        ]);
+        return true; // 기본 종료 동작을 막음
+      }
+    };
+
+    const backHandler = BackHandler.addEventListener(
+      "hardwareBackPress",
+      backAction
+    );
+
+    return () => backHandler.remove();
+  }, [currentScreen]);
 
   const requestLocationPermission = async () => {
     try {

@@ -38,3 +38,7 @@ yarn-error.*
 
 *.aab
 *.apk
+
+android/
+ios/
+.idea/
